@@ -1,0 +1,24 @@
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" >
+    <head>
+        <title>Wicket Quickstart Archetype Homepage</title>
+    </head>
+    <body>
+        <strong>Wicket Quickstart Archetype Homepage</strong>
+        <br/><br/>
+
+		<form wicket:id = "rumorForm" id = "rumorForm">
+			Add your rumor here:
+			<p>
+			<textarea wicket:id = "text">This is a rumor</textarea>
+			<p>
+			<input type = "submit" value = "Submit" id="formsubmit"/>
+	  </form>
+		  <p/>
+	  <span wicket:id = "rumors" id="rumors">
+    <p>
+        <span wicket:id="date">1/1/2004</span><br>
+        <span wicket:id="text">Rumors text goes here.</span>
+    </p>
+  </span>
+    </body>
+</html>
