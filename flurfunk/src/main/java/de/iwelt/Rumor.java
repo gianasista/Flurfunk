@@ -3,7 +3,7 @@ package de.iwelt;
 import java.util.Date;
 
 /**
- * @author vera
+ * @author gianasista
  */
 public class Rumor
 {

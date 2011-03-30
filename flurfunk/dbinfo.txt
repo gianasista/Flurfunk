@@ -1,0 +1,6 @@
+sqlite> create table rumors (
+   ...> rumorId INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...> rumorText TEXT,
+   ...> rumorTimestamp TIMESTAMP);
+
+insert into rumors (rumorText, rumorTimestamp) values ('Blub ist weg', '2008-09-01 00:00:00.0');
