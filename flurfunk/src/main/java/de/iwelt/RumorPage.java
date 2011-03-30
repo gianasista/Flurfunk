@@ -21,6 +21,8 @@ import org.wicketstuff.rome.FeedResource;
 import com.almworks.sqlite4java.SQLiteConnection;
 import com.almworks.sqlite4java.SQLiteException;
 import com.almworks.sqlite4java.SQLiteStatement;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 /**
  * Homepage
@@ -31,9 +33,14 @@ public class RumorPage extends WebPage {
 
 	private static final List<Rumor> rumorList = new ArrayList<Rumor>();
 
+	@Inject @Named("db")
+	private RumorDatabase rumorDatabase;
+
 	public RumorPage()
 	{
-		initRumorsFromDb();
+		//initRumorsFromDb();
+		System.out.println("RumorDB-Instanz: "+rumorDatabase);
+		rumorDatabase.getRumors();
 
 		add(new RumorForm("rumorForm"));
 
@@ -54,6 +61,7 @@ public class RumorPage extends WebPage {
 		    }));
 	}
 
+	/*
 	private void initRumorsFromDb()
 	{
 		SQLiteConnection db = new SQLiteConnection(new File("/Users/vera/projects/privat/Flurfunk/flurfunk/ff_development.db"));
@@ -75,6 +83,7 @@ public class RumorPage extends WebPage {
 		}
 
 	}
+	*/
 
 	public final class RumorForm extends Form<ValueMap>
 	{
