@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D1FE2C7913450C5D0047A461 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7813450C5D0047A461 /* UIKit.framework */; };
+		D1FE2C7B13450C5D0047A461 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7A13450C5D0047A461 /* Foundation.framework */; };
+		D1FE2C7D13450C5D0047A461 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7C13450C5D0047A461 /* CoreGraphics.framework */; };
+		D1FE2C7F13450C5D0047A461 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7E13450C5D0047A461 /* CoreData.framework */; };
+		D1FE2C8513450C5D0047A461 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1FE2C8313450C5D0047A461 /* InfoPlist.strings */; };
+		D1FE2C8813450C5D0047A461 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FE2C8713450C5D0047A461 /* main.m */; };
+		D1FE2C8B13450C5D0047A461 /* FlurfunkAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FE2C8A13450C5D0047A461 /* FlurfunkAppAppDelegate.m */; };
+		D1FE2C8E13450C5D0047A461 /* FlurfunkApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1FE2C8C13450C5D0047A461 /* FlurfunkApp.xcdatamodeld */; };
+		D1FE2C9113450C5D0047A461 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1FE2C8F13450C5D0047A461 /* MainWindow.xib */; };
+		D1FE2C9413450C5D0047A461 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FE2C9313450C5D0047A461 /* RootViewController.m */; };
+		D1FE2C9713450C5D0047A461 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1FE2C9513450C5D0047A461 /* RootViewController.xib */; };
+		D1FE2C9E13450C5D0047A461 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7813450C5D0047A461 /* UIKit.framework */; };
+		D1FE2C9F13450C5D0047A461 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7A13450C5D0047A461 /* Foundation.framework */; };
+		D1FE2CA013450C5D0047A461 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7C13450C5D0047A461 /* CoreGraphics.framework */; };
+		D1FE2CA113450C5D0047A461 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE2C7E13450C5D0047A461 /* CoreData.framework */; };
+		D1FE2CA913450C5D0047A461 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1FE2CA713450C5D0047A461 /* InfoPlist.strings */; };
+		D1FE2CAC13450C5D0047A461 /* FlurfunkAppTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D1FE2CAB13450C5D0047A461 /* FlurfunkAppTests.h */; };
+		D1FE2CAE13450C5D0047A461 /* FlurfunkAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FE2CAD13450C5D0047A461 /* FlurfunkAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D1FE2CA213450C5D0047A461 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1FE2C6B13450C5D0047A461 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1FE2C7313450C5D0047A461;
+			remoteInfo = FlurfunkApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D1FE2C7413450C5D0047A461 /* FlurfunkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlurfunkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1FE2C7813450C5D0047A461 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D1FE2C7A13450C5D0047A461 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D1FE2C7C13450C5D0047A461 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D1FE2C7E13450C5D0047A461 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D1FE2C8213450C5D0047A461 /* FlurfunkApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlurfunkApp-Info.plist"; sourceTree = "<group>"; };
+		D1FE2C8413450C5D0047A461 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D1FE2C8613450C5D0047A461 /* FlurfunkApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlurfunkApp-Prefix.pch"; sourceTree = "<group>"; };
+		D1FE2C8713450C5D0047A461 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D1FE2C8913450C5D0047A461 /* FlurfunkAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlurfunkAppAppDelegate.h; sourceTree = "<group>"; };
+		D1FE2C8A13450C5D0047A461 /* FlurfunkAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlurfunkAppAppDelegate.m; sourceTree = "<group>"; };
+		D1FE2C8D13450C5D0047A461 /* FlurfunkApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlurfunkApp.xcdatamodel; sourceTree = "<group>"; };
+		D1FE2C9013450C5D0047A461 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		D1FE2C9213450C5D0047A461 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D1FE2C9313450C5D0047A461 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		D1FE2C9613450C5D0047A461 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		D1FE2C9D13450C5D0047A461 /* FlurfunkAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlurfunkAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1FE2CA613450C5D0047A461 /* FlurfunkAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlurfunkAppTests-Info.plist"; sourceTree = "<group>"; };
+		D1FE2CA813450C5D0047A461 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D1FE2CAA13450C5D0047A461 /* FlurfunkAppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlurfunkAppTests-Prefix.pch"; sourceTree = "<group>"; };
+		D1FE2CAB13450C5D0047A461 /* FlurfunkAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlurfunkAppTests.h; sourceTree = "<group>"; };
+		D1FE2CAD13450C5D0047A461 /* FlurfunkAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlurfunkAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1FE2C7113450C5D0047A461 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FE2C7913450C5D0047A461 /* UIKit.framework in Frameworks */,
+				D1FE2C7B13450C5D0047A461 /* Foundation.framework in Frameworks */,
+				D1FE2C7D13450C5D0047A461 /* CoreGraphics.framework in Frameworks */,
+				D1FE2C7F13450C5D0047A461 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1FE2C9913450C5D0047A461 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FE2C9E13450C5D0047A461 /* UIKit.framework in Frameworks */,
+				D1FE2C9F13450C5D0047A461 /* Foundation.framework in Frameworks */,
+				D1FE2CA013450C5D0047A461 /* CoreGraphics.framework in Frameworks */,
+				D1FE2CA113450C5D0047A461 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D1FE2C6913450C5D0047A461 = {
+			isa = PBXGroup;
+			children = (
+				D1FE2C8013450C5D0047A461 /* FlurfunkApp */,
+				D1FE2CA413450C5D0047A461 /* FlurfunkAppTests */,
+				D1FE2C7713450C5D0047A461 /* Frameworks */,
+				D1FE2C7513450C5D0047A461 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1FE2C7513450C5D0047A461 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1FE2C7413450C5D0047A461 /* FlurfunkApp.app */,
+				D1FE2C9D13450C5D0047A461 /* FlurfunkAppTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1FE2C7713450C5D0047A461 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1FE2C7813450C5D0047A461 /* UIKit.framework */,
+				D1FE2C7A13450C5D0047A461 /* Foundation.framework */,
+				D1FE2C7C13450C5D0047A461 /* CoreGraphics.framework */,
+				D1FE2C7E13450C5D0047A461 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1FE2C8013450C5D0047A461 /* FlurfunkApp */ = {
+			isa = PBXGroup;
+			children = (
+				D1FE2C8913450C5D0047A461 /* FlurfunkAppAppDelegate.h */,
+				D1FE2C8A13450C5D0047A461 /* FlurfunkAppAppDelegate.m */,
+				D1FE2C8F13450C5D0047A461 /* MainWindow.xib */,
+				D1FE2C9213450C5D0047A461 /* RootViewController.h */,
+				D1FE2C9313450C5D0047A461 /* RootViewController.m */,
+				D1FE2C9513450C5D0047A461 /* RootViewController.xib */,
+				D1FE2C8C13450C5D0047A461 /* FlurfunkApp.xcdatamodeld */,
+				D1FE2C8113450C5D0047A461 /* Supporting Files */,
+			);
+			path = FlurfunkApp;
+			sourceTree = "<group>";
+		};
+		D1FE2C8113450C5D0047A461 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1FE2C8213450C5D0047A461 /* FlurfunkApp-Info.plist */,
+				D1FE2C8313450C5D0047A461 /* InfoPlist.strings */,
+				D1FE2C8613450C5D0047A461 /* FlurfunkApp-Prefix.pch */,
+				D1FE2C8713450C5D0047A461 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1FE2CA413450C5D0047A461 /* FlurfunkAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D1FE2CAB13450C5D0047A461 /* FlurfunkAppTests.h */,
+				D1FE2CAD13450C5D0047A461 /* FlurfunkAppTests.m */,
+				D1FE2CA513450C5D0047A461 /* Supporting Files */,
+			);
+			path = FlurfunkAppTests;
+			sourceTree = "<group>";
+		};
+		D1FE2CA513450C5D0047A461 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1FE2CA613450C5D0047A461 /* FlurfunkAppTests-Info.plist */,
+				D1FE2CA713450C5D0047A461 /* InfoPlist.strings */,
+				D1FE2CAA13450C5D0047A461 /* FlurfunkAppTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1FE2C7313450C5D0047A461 /* FlurfunkApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1FE2CB113450C5D0047A461 /* Build configuration list for PBXNativeTarget "FlurfunkApp" */;
+			buildPhases = (
+				D1FE2C7013450C5D0047A461 /* Sources */,
+				D1FE2C7113450C5D0047A461 /* Frameworks */,
+				D1FE2C7213450C5D0047A461 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlurfunkApp;
+			productName = FlurfunkApp;
+			productReference = D1FE2C7413450C5D0047A461 /* FlurfunkApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D1FE2C9C13450C5D0047A461 /* FlurfunkAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1FE2CB413450C5D0047A461 /* Build configuration list for PBXNativeTarget "FlurfunkAppTests" */;
+			buildPhases = (
+				D1FE2C9813450C5D0047A461 /* Sources */,
+				D1FE2C9913450C5D0047A461 /* Frameworks */,
+				D1FE2C9A13450C5D0047A461 /* Resources */,
+				D1FE2C9B13450C5D0047A461 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1FE2CA313450C5D0047A461 /* PBXTargetDependency */,
+			);
+			name = FlurfunkAppTests;
+			productName = FlurfunkAppTests;
+			productReference = D1FE2C9D13450C5D0047A461 /* FlurfunkAppTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1FE2C6B13450C5D0047A461 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = D1FE2C6E13450C5D0047A461 /* Build configuration list for PBXProject "FlurfunkApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D1FE2C6913450C5D0047A461;
+			productRefGroup = D1FE2C7513450C5D0047A461 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1FE2C7313450C5D0047A461 /* FlurfunkApp */,
+				D1FE2C9C13450C5D0047A461 /* FlurfunkAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1FE2C7213450C5D0047A461 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FE2C8513450C5D0047A461 /* InfoPlist.strings in Resources */,
+				D1FE2C9113450C5D0047A461 /* MainWindow.xib in Resources */,
+				D1FE2C9713450C5D0047A461 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1FE2C9A13450C5D0047A461 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FE2CA913450C5D0047A461 /* InfoPlist.strings in Resources */,
+				D1FE2CAC13450C5D0047A461 /* FlurfunkAppTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D1FE2C9B13450C5D0047A461 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D1FE2C7013450C5D0047A461 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FE2C8813450C5D0047A461 /* main.m in Sources */,
+				D1FE2C8B13450C5D0047A461 /* FlurfunkAppAppDelegate.m in Sources */,
+				D1FE2C8E13450C5D0047A461 /* FlurfunkApp.xcdatamodeld in Sources */,
+				D1FE2C9413450C5D0047A461 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1FE2C9813450C5D0047A461 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1FE2CAE13450C5D0047A461 /* FlurfunkAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D1FE2CA313450C5D0047A461 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1FE2C7313450C5D0047A461 /* FlurfunkApp */;
+			targetProxy = D1FE2CA213450C5D0047A461 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D1FE2C8313450C5D0047A461 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1FE2C8413450C5D0047A461 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D1FE2C8F13450C5D0047A461 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1FE2C9013450C5D0047A461 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		D1FE2C9513450C5D0047A461 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1FE2C9613450C5D0047A461 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		D1FE2CA713450C5D0047A461 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1FE2CA813450C5D0047A461 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D1FE2CAF13450C5D0047A461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D1FE2CB013450C5D0047A461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		D1FE2CB213450C5D0047A461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlurfunkApp/FlurfunkApp-Prefix.pch";
+				INFOPLIST_FILE = "FlurfunkApp/FlurfunkApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D1FE2CB313450C5D0047A461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlurfunkApp/FlurfunkApp-Prefix.pch";
+				INFOPLIST_FILE = "FlurfunkApp/FlurfunkApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D1FE2CB513450C5D0047A461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlurfunkApp.app/FlurfunkApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlurfunkAppTests/FlurfunkAppTests-Prefix.pch";
+				INFOPLIST_FILE = "FlurfunkAppTests/FlurfunkAppTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D1FE2CB613450C5D0047A461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlurfunkApp.app/FlurfunkApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlurfunkAppTests/FlurfunkAppTests-Prefix.pch";
+				INFOPLIST_FILE = "FlurfunkAppTests/FlurfunkAppTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D1FE2C6E13450C5D0047A461 /* Build configuration list for PBXProject "FlurfunkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1FE2CAF13450C5D0047A461 /* Debug */,
+				D1FE2CB013450C5D0047A461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1FE2CB113450C5D0047A461 /* Build configuration list for PBXNativeTarget "FlurfunkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1FE2CB213450C5D0047A461 /* Debug */,
+				D1FE2CB313450C5D0047A461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D1FE2CB413450C5D0047A461 /* Build configuration list for PBXNativeTarget "FlurfunkAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1FE2CB513450C5D0047A461 /* Debug */,
+				D1FE2CB613450C5D0047A461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D1FE2C8C13450C5D0047A461 /* FlurfunkApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D1FE2C8D13450C5D0047A461 /* FlurfunkApp.xcdatamodel */,
+			);
+			currentVersion = D1FE2C8D13450C5D0047A461 /* FlurfunkApp.xcdatamodel */;
+			path = FlurfunkApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D1FE2C6B13450C5D0047A461 /* Project object */;
+}
