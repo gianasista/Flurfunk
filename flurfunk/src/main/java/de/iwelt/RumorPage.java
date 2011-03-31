@@ -1,6 +1,5 @@
 package de.iwelt;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,13 +13,9 @@ import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.model.CompoundPropertyModel;
-import org.apache.wicket.util.file.File;
 import org.apache.wicket.util.value.ValueMap;
 import org.wicketstuff.rome.FeedResource;
 
-import com.almworks.sqlite4java.SQLiteConnection;
-import com.almworks.sqlite4java.SQLiteException;
-import com.almworks.sqlite4java.SQLiteStatement;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
@@ -31,16 +26,14 @@ public class RumorPage extends WebPage {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final List<Rumor> rumorList = new ArrayList<Rumor>();
+	private static List<Rumor> rumorList;
 
 	@Inject @Named("db")
 	private RumorDatabase rumorDatabase;
 
 	public RumorPage()
 	{
-		//initRumorsFromDb();
-		System.out.println("RumorDB-Instanz: "+rumorDatabase);
-		rumorDatabase.getRumors();
+		rumorList = rumorDatabase.getRumors();
 
 		add(new RumorForm("rumorForm"));
 
@@ -60,30 +53,6 @@ public class RumorPage extends WebPage {
 		      }
 		    }));
 	}
-
-	/*
-	private void initRumorsFromDb()
-	{
-		SQLiteConnection db = new SQLiteConnection(new File("/Users/vera/projects/privat/Flurfunk/flurfunk/ff_development.db"));
-	    try
-	    {
-			db.open(true);
-
-			SQLiteStatement st = db.prepare("SELECT rumorText FROM rumors");
-
-			while (st.step())
-			{
-		        System.out.println("Column wert: "+st.columnString(0));
-		    }
-
-
-		} catch (SQLiteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-	*/
 
 	public final class RumorForm extends Form<ValueMap>
 	{
@@ -105,6 +74,7 @@ public class RumorPage extends WebPage {
             rumor.setText(values.getString("text"));
 
             rumorList.add(rumor);
+            rumorDatabase.insertRumor(rumor);
             values.put("text", "");
 		}
 	}
