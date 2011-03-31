@@ -31,6 +31,9 @@ public class RumorPage extends WebPage {
 	@Inject @Named("db")
 	private RumorDatabase rumorDatabase;
 
+	@Inject @Named("rss")
+	private RumorsResource rssResource;
+
 	public RumorPage()
 	{
 		rumorList = rumorDatabase.getRumors();
@@ -49,7 +52,7 @@ public class RumorPage extends WebPage {
 
 		 add(FeedResource.autodiscoveryLink(new ResourceReference("rumorFeed") {
 		      protected Resource newResource() {
-		        return new RumorsResource();
+		        return rssResource;
 		      }
 		    }));
 	}

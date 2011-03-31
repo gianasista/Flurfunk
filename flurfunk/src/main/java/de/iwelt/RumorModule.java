@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Singleton;
 import com.google.inject.name.Names;
 
 /**
@@ -25,7 +26,8 @@ public class RumorModule extends AbstractModule
 	@Override
 	protected void configure()
 	{
-		bind(RumorDatabase.class).annotatedWith(Names.named("db")).to(RumorDatabase.class);
+		bind(RumorsResource.class).annotatedWith(Names.named("rss")).to(RumorsResource.class);
+		bind(RumorDatabase.class).annotatedWith(Names.named("db")).to(RumorDatabase.class).in(Singleton.class);
 
 		Properties databaseProperties = loadProperties("db.properties");
 		Names.bindProperties(binder(), databaseProperties);
