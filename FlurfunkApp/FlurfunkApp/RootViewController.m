@@ -9,7 +9,16 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, retain) NSXMLParser         *rssParser;
+@property (nonatomic, retain) NSMutableArray      *rssRumors;
+@property (nonatomic, retain) NSMutableDictionary *item;
+@property (nonatomic, retain) NSString            *currentElement;
+@property (nonatomic, retain) NSMutableString     *currentTitle;
+@property (nonatomic, retain) NSMutableString     *currentDate;
+@property (nonatomic, retain) NSMutableString     *currentSummary;
+@property (nonatomic, retain) NSMutableString     *currentLink;
+
+- (void) configureCell: (UITableViewCell *) cell atIndexPath: (NSIndexPath *) indexPath;
 @end
 
 @implementation RootViewController
@@ -18,35 +27,75 @@
 
 @synthesize managedObjectContext=__managedObjectContext;
 
-- (void)viewDidLoad
+@synthesize rssParser;
+@synthesize rssRumors;
+@synthesize item;
+@synthesize currentElement;
+@synthesize currentTitle;
+@synthesize currentDate;
+@synthesize currentSummary;
+@synthesize currentLink;
+
+- (void) dealloc
+{
+    [__fetchedResultsController release];
+    [__managedObjectContext release];
+    
+    self.rssParser      = nil;
+    self.rssRumors      = nil;
+    self.item           = nil;
+    self.currentElement = nil;
+    self.currentTitle   = nil;
+    self.currentDate    = nil;
+    self.currentSummary = nil;
+    self.currentLink    = nil;
+    
+    [super dealloc];
+}
+
+
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     // Set up the edit and add buttons.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+                                                                               target:self 
+                                                                               action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
+    
+    self.rssRumors = [NSMutableArray array];
+    NSURL *rss = [NSURL URLWithString:@"http://localhost:8080/resources/org.apache.wicket.Application/rumorFeed"];
+    self.rssParser = [[[NSXMLParser alloc] initWithContentsOfURL:rss] autorelease];
+    [self.rssParser setDelegate: self];
+    
+    [self.rssParser setShouldProcessNamespaces:NO];
+    [self.rssParser setShouldReportNamespacePrefixes:NO];
+    [self.rssParser setShouldResolveExternalEntities:NO];
+	
+    [self.rssParser parse];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void) viewWillAppear: (BOOL) animated
 {
-    [super viewWillAppear:animated];
+    [super viewWillAppear: animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void) viewDidAppear: (BOOL) animated
 {
-    [super viewDidAppear:animated];
+    [super viewDidAppear: animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void) viewWillDisappear: (BOOL) animated
 {
-	[super viewWillDisappear:animated];
+	[super viewWillDisappear: animated];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void) viewDidDisappear: (BOOL) animated
 {
-	[super viewDidDisappear:animated];
+	[super viewDidDisappear: animated];
 }
 
 /*
@@ -58,19 +107,19 @@
  */
 
 // Customize the number of sections in the table view.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger) numberOfSectionsInTableView: (UITableView *) tableView
 {
     return [[self.fetchedResultsController sections] count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
@@ -93,7 +142,7 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView: (UITableView *) tableView commitEditingStyle: (UITableViewCellEditingStyle) editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
@@ -116,13 +165,13 @@
     }   
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL) tableView: (UITableView *) tableView canMoveRowAtIndexPath: (NSIndexPath *) indexPath
 {
     // The table view should not be re-orderable.
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
 {
     /*
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -133,7 +182,7 @@
 	*/
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -141,7 +190,7 @@
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload
+- (void) viewDidUnload
 {
     [super viewDidUnload];
 
@@ -149,20 +198,13 @@
     // For example: self.myOutlet = nil;
 }
 
-- (void)dealloc
-{
-    [__fetchedResultsController release];
-    [__managedObjectContext release];
-    [super dealloc];
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void) configureCell: (UITableViewCell *) cell atIndexPath: (NSIndexPath *) indexPath
 {
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
 }
 
-- (void)insertNewObject
+- (void) insertNewObject
 {
     // Create a new instance of the entity managed by the fetched results controller.
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
@@ -189,7 +231,7 @@
 
 #pragma mark - Fetched results controller
 
-- (NSFetchedResultsController *)fetchedResultsController
+- (NSFetchedResultsController *) fetchedResultsController
 {
     if (__fetchedResultsController != nil)
     {
@@ -242,13 +284,13 @@
 
 #pragma mark - Fetched results controller delegate
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+- (void) controllerWillChangeContent: (NSFetchedResultsController *) controller
 {
     [self.tableView beginUpdates];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+- (void) controller: (NSFetchedResultsController *) controller didChangeSection: (id <NSFetchedResultsSectionInfo>) sectionInfo
+           atIndex: (NSUInteger) sectionIndex forChangeType: (NSFetchedResultsChangeType) type
 {
     switch(type)
     {
@@ -262,9 +304,9 @@
     }
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath
+- (void) controller: (NSFetchedResultsController *) controller didChangeObject: (id) anObject
+       atIndexPath: (NSIndexPath *) indexPath forChangeType: (NSFetchedResultsChangeType) type
+      newIndexPath: (NSIndexPath *) newIndexPath
 {
     UITableView *tableView = self.tableView;
     
@@ -290,7 +332,7 @@
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+- (void) controllerDidChangeContent: (NSFetchedResultsController *) controller
 {
     [self.tableView endUpdates];
 }
@@ -304,5 +346,31 @@
     [self.tableView reloadData];
 }
  */
+
+#pragma NSXMLParserDelegate
+
+- (void) parserDidStartDocument: (NSXMLParser *) parser
+{
+}
+
+- (void) parser: (NSXMLParser *) parser parseErrorOccurred: (NSError *) parseError 
+{
+}
+
+- (void) parser: (NSXMLParser *) parser didStartElement: (NSString *) elementName namespaceURI: (NSString *) namespaceURI qualifiedName: (NSString *) qName attributes: (NSDictionary *) attributeDict
+{			
+}
+
+- (void) parser: (NSXMLParser *) parser didEndElement: (NSString *) elementName namespaceURI: (NSString *) namespaceURI qualifiedName:(NSString *) qName
+{     
+}
+
+- (void) parser: (NSXMLParser *) parser foundCharacters: (NSString *) string
+{
+}
+
+- (void) parserDidEndDocument: (NSXMLParser *) parser 
+{
+}
 
 @end
